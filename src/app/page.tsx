@@ -31,7 +31,7 @@ export default async function Home() {
             className="text-3xl sm:text-4xl font-black tracking-widest uppercase mt-1"
             style={{ color: "var(--navy)" }}
           >
-            AI Hackathon
+            AI Hackathon Builds
           </p>
           <p className="text-sm tracking-widest uppercase mt-2" style={{ color: "var(--brown)" }}>
             {participants.length} Builder{participants.length !== 1 ? "s" : ""}
@@ -57,7 +57,7 @@ export default async function Home() {
 
       {/* ── Footer ── */}
       <footer className="text-center py-8 text-xs tracking-widest uppercase" style={{ color: "var(--tan)" }}>
-        The Living Room Lab · AI Hackathon
+        AI Hackathon Builds
         <span className="mx-2">·</span>
         Built by{" "}
         <a
