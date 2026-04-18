@@ -32,12 +32,16 @@ async function kvWrite(data: Participant[]): Promise<void> {
 
 // ── Local JSON file path ─────────────────────────────────────────────────────
 
+function jsonFilePath(): string {
+  // Vercel filesystem is read-only except /tmp
+  if (process.env.VERCEL) return "/tmp/participants.json";
+  return require("path").join(process.cwd(), "data", "participants.json");
+}
+
 async function fileRead(): Promise<Participant[]> {
   const fs = await import("fs/promises");
-  const path = await import("path");
-  const filePath = path.join(process.cwd(), "data", "participants.json");
   try {
-    const raw = await fs.readFile(filePath, "utf-8");
+    const raw = await fs.readFile(jsonFilePath(), "utf-8");
     return JSON.parse(raw) as Participant[];
   } catch {
     return [];
@@ -49,9 +53,7 @@ let writeChain: Promise<void> = Promise.resolve();
 async function fileWrite(data: Participant[]): Promise<void> {
   writeChain = writeChain.then(async () => {
     const fs = await import("fs/promises");
-    const path = await import("path");
-    const filePath = path.join(process.cwd(), "data", "participants.json");
-    await fs.writeFile(filePath, JSON.stringify(data, null, 2), "utf-8");
+    await fs.writeFile(jsonFilePath(), JSON.stringify(data, null, 2), "utf-8");
   });
   return writeChain;
 }
