@@ -15,26 +15,35 @@ export interface Participant {
 const KV_KEY = "participants";
 
 function isKvEnabled(): boolean {
-  return Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
+  return Boolean(
+    process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
+  );
 }
 
-// ── Vercel KV path ──────────────────────────────────────────────────────────
+// ── Upstash Redis path ───────────────────────────────────────────────────────
 
 async function kvRead(): Promise<Participant[]> {
-  const { kv } = await import("@vercel/kv");
-  const data = await kv.get<Participant[]>(KV_KEY);
+  const { Redis } = await import("@upstash/redis");
+  const redis = new Redis({
+    url: process.env.UPSTASH_REDIS_REST_URL!,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+  });
+  const data = await redis.get<Participant[]>(KV_KEY);
   return data ?? [];
 }
 
 async function kvWrite(data: Participant[]): Promise<void> {
-  const { kv } = await import("@vercel/kv");
-  await kv.set(KV_KEY, data);
+  const { Redis } = await import("@upstash/redis");
+  const redis = new Redis({
+    url: process.env.UPSTASH_REDIS_REST_URL!,
+    token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+  });
+  await redis.set(KV_KEY, data);
 }
 
 // ── Local JSON file path ─────────────────────────────────────────────────────
 
 function jsonFilePath(): string {
-  // Vercel filesystem is read-only except /tmp
   if (process.env.VERCEL) return "/tmp/participants.json";
   return path.join(process.cwd(), "data", "participants.json");
 }
