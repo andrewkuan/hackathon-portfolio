@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd /Users/andrewkuan/Desktop/Project-Andrew/Projects/20260418-portfolio-website && git diff --quiet && git diff --cached --quiet || (git add -A && git commit -m \"chore: auto-commit changes\" 2>/dev/null || true)",
+            "statusMessage": "Auto-committing changes..."
+          }
+        ]
+      }
+    ]
+  }
+}
