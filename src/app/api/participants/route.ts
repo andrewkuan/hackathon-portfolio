@@ -31,6 +31,7 @@ export async function POST(req: NextRequest) {
       instagramUrl: body.instagramUrl ?? "",
       photoUrl: body.photoUrl ?? "",
       photoSource: body.photoSource ?? "none",
+      websiteUrl: body.websiteUrl ?? "",
       createdAt: now,
       updatedAt: now,
     };

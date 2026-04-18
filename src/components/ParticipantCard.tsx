@@ -19,6 +19,16 @@ function InstagramIcon() {
   );
 }
 
+function GlobeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="10" />
+      <line x1="2" y1="12" x2="22" y2="12" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    </svg>
+  );
+}
+
 function Initials({ name }: { name: string }) {
   const parts = name.trim().split(/\s+/);
   const initials = parts.length >= 2
@@ -32,7 +42,7 @@ function Initials({ name }: { name: string }) {
 }
 
 export function ParticipantCard({ participant }: { participant: Participant }) {
-  const { name, photoUrl, linkedinUrl, instagramUrl } = participant;
+  const { name, photoUrl, linkedinUrl, instagramUrl, websiteUrl } = participant;
 
   return (
     <div className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
@@ -73,6 +83,17 @@ export function ParticipantCard({ participant }: { participant: Participant }) {
             aria-label={`${name} on Instagram`}
           >
             <InstagramIcon />
+          </a>
+        )}
+        {websiteUrl && (
+          <a
+            href={websiteUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-gray-800 transition-colors"
+            aria-label={`${name}'s project website`}
+          >
+            <GlobeIcon />
           </a>
         )}
       </div>

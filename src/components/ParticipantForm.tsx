@@ -16,6 +16,7 @@ export function ParticipantForm({ initial = {}, mode }: Props) {
   const [name, setName] = useState(initial.name ?? "");
   const [linkedinUrl, setLinkedinUrl] = useState(initial.linkedinUrl ?? "");
   const [instagramUrl, setInstagramUrl] = useState(initial.instagramUrl ?? "");
+  const [websiteUrl, setWebsiteUrl] = useState(initial.websiteUrl ?? "");
   const [photoUrl, setPhotoUrl] = useState(initial.photoUrl ?? "");
   const [photoSource, setPhotoSource] = useState<"linkedin" | "upload" | "none">(
     initial.photoSource ?? "none"
@@ -56,7 +57,7 @@ export function ParticipantForm({ initial = {}, mode }: Props) {
     setSaving(true);
     setError(null);
 
-    const body = { name, linkedinUrl, instagramUrl, photoUrl, photoSource };
+    const body = { name, linkedinUrl, instagramUrl, websiteUrl, photoUrl, photoSource };
     const url = mode === "edit" ? `/api/participants/${initial.id}` : "/api/participants";
     const method = mode === "edit" ? "PUT" : "POST";
 
@@ -126,6 +127,17 @@ export function ParticipantForm({ initial = {}, mode }: Props) {
           value={instagramUrl}
           onChange={(e) => setInstagramUrl(e.target.value)}
           placeholder="https://instagram.com/handle"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium text-gray-700 mb-1">Project Website URL</label>
+        <input
+          type="url"
+          value={websiteUrl}
+          onChange={(e) => setWebsiteUrl(e.target.value)}
+          placeholder="https://myproject.com"
           className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>

@@ -8,6 +8,7 @@ export interface Participant {
   instagramUrl: string;
   photoUrl: string;
   photoSource: "linkedin" | "upload" | "none";
+  websiteUrl: string;
   createdAt: string;
   updatedAt: string;
 }
