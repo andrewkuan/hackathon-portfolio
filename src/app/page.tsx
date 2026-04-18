@@ -58,6 +58,17 @@ export default async function Home() {
       {/* ── Footer ── */}
       <footer className="text-center py-8 text-xs tracking-widest uppercase" style={{ color: "var(--tan)" }}>
         The Living Room Lab · AI Hackathon
+        <span className="mx-2">·</span>
+        Built by{" "}
+        <a
+          href="https://www.linkedin.com/in/andrewkuan/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline underline-offset-2 hover:opacity-70 transition-opacity"
+          style={{ color: "var(--brown)" }}
+        >
+          Andrew Kuan
+        </a>
       </footer>
     </main>
   );
