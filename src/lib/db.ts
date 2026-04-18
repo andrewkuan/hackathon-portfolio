@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import path from "path";
 
 export interface Participant {
   id: string;
@@ -35,7 +36,7 @@ async function kvWrite(data: Participant[]): Promise<void> {
 function jsonFilePath(): string {
   // Vercel filesystem is read-only except /tmp
   if (process.env.VERCEL) return "/tmp/participants.json";
-  return require("path").join(process.cwd(), "data", "participants.json");
+  return path.join(process.cwd(), "data", "participants.json");
 }
 
 async function fileRead(): Promise<Participant[]> {
