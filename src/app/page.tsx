@@ -20,23 +20,9 @@ export default async function Home() {
 
         {/* arched title */}
         <div className="relative z-10 flex flex-col items-center gap-2 mb-8">
-          <svg viewBox="0 0 420 80" className="w-[320px] sm:w-[420px]" aria-hidden>
-            <defs>
-              <path id="arc" d="M 30,70 A 200,200 0 0,1 390,70" />
-            </defs>
-            <text
-              fontFamily="Arial, sans-serif"
-              fontWeight="900"
-              fontSize="38"
-              letterSpacing="6"
-              fill="var(--navy)"
-              textAnchor="middle"
-            >
-              <textPath href="#arc" startOffset="50%">
-                THE LIVING ROOM LAB
-              </textPath>
-            </text>
-          </svg>
+          <h1 className="text-2xl sm:text-4xl font-black tracking-widest uppercase text-center" style={{ color: "var(--navy)" }}>
+            The Living Room Lab
+          </h1>
 
           {/* couch illustration */}
           <div className="text-7xl my-1 select-none">🛋️</div>
