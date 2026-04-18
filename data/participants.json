@@ -1,1 +1,101 @@
-[]
+[
+  {
+    "id": "sample-01",
+    "name": "Alex Rivera",
+    "linkedinUrl": "https://linkedin.com",
+    "instagramUrl": "https://instagram.com",
+    "websiteUrl": "https://example.com",
+    "photoUrl": "",
+    "photoSource": "none",
+    "createdAt": "2026-04-18T00:00:00.000Z",
+    "updatedAt": "2026-04-18T00:00:00.000Z"
+  },
+  {
+    "id": "sample-02",
+    "name": "Jamie Chen",
+    "linkedinUrl": "https://linkedin.com",
+    "instagramUrl": "",
+    "websiteUrl": "https://example.com",
+    "photoUrl": "",
+    "photoSource": "none",
+    "createdAt": "2026-04-18T00:00:00.000Z",
+    "updatedAt": "2026-04-18T00:00:00.000Z"
+  },
+  {
+    "id": "sample-03",
+    "name": "Sam Okonkwo",
+    "linkedinUrl": "https://linkedin.com",
+    "instagramUrl": "https://instagram.com",
+    "websiteUrl": "",
+    "photoUrl": "",
+    "photoSource": "none",
+    "createdAt": "2026-04-18T00:00:00.000Z",
+    "updatedAt": "2026-04-18T00:00:00.000Z"
+  },
+  {
+    "id": "sample-04",
+    "name": "Priya Nair",
+    "linkedinUrl": "https://linkedin.com",
+    "instagramUrl": "https://instagram.com",
+    "websiteUrl": "https://example.com",
+    "photoUrl": "",
+    "photoSource": "none",
+    "createdAt": "2026-04-18T00:00:00.000Z",
+    "updatedAt": "2026-04-18T00:00:00.000Z"
+  },
+  {
+    "id": "sample-05",
+    "name": "Jordan Park",
+    "linkedinUrl": "https://linkedin.com",
+    "instagramUrl": "",
+    "websiteUrl": "https://example.com",
+    "photoUrl": "",
+    "photoSource": "none",
+    "createdAt": "2026-04-18T00:00:00.000Z",
+    "updatedAt": "2026-04-18T00:00:00.000Z"
+  },
+  {
+    "id": "sample-06",
+    "name": "Morgan Liu",
+    "linkedinUrl": "https://linkedin.com",
+    "instagramUrl": "https://instagram.com",
+    "websiteUrl": "https://example.com",
+    "photoUrl": "",
+    "photoSource": "none",
+    "createdAt": "2026-04-18T00:00:00.000Z",
+    "updatedAt": "2026-04-18T00:00:00.000Z"
+  },
+  {
+    "id": "sample-07",
+    "name": "Taylor Smith",
+    "linkedinUrl": "",
+    "instagramUrl": "https://instagram.com",
+    "websiteUrl": "https://example.com",
+    "photoUrl": "",
+    "photoSource": "none",
+    "createdAt": "2026-04-18T00:00:00.000Z",
+    "updatedAt": "2026-04-18T00:00:00.000Z"
+  },
+  {
+    "id": "sample-08",
+    "name": "Casey Nguyen",
+    "linkedinUrl": "https://linkedin.com",
+    "instagramUrl": "https://instagram.com",
+    "websiteUrl": "",
+    "photoUrl": "",
+    "photoSource": "none",
+    "createdAt": "2026-04-18T00:00:00.000Z",
+    "updatedAt": "2026-04-18T00:00:00.000Z"
+  },
+  {
+    "id": "sample-09",
+    "name": "Drew Hassan",
+    "linkedinUrl": "https://linkedin.com",
+    "instagramUrl": "",
+    "websiteUrl": "https://example.com",
+    "photoUrl": "",
+    "photoSource": "none",
+    "createdAt": "2026-04-18T00:00:00.000Z",
+    "updatedAt": "2026-04-18T00:00:00.000Z"
+  }
+]

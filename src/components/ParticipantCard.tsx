@@ -35,7 +35,7 @@ function Initials({ name }: { name: string }) {
     ? `${parts[0][0]}${parts[parts.length - 1][0]}`
     : name.slice(0, 2);
   return (
-    <div className="w-24 h-24 rounded-full flex items-center justify-center text-2xl font-bold select-none" style={{ background: "var(--tan)", color: "var(--card-bg)" }}>
+    <div className="w-32 h-32 rounded-full flex items-center justify-center text-3xl font-bold select-none" style={{ background: "var(--tan)", color: "var(--card-bg)" }}>
       {initials.toUpperCase()}
     </div>
   );
@@ -45,8 +45,8 @@ export function ParticipantCard({ participant }: { participant: Participant }) {
   const { name, photoUrl, linkedinUrl, instagramUrl, websiteUrl } = participant;
 
   return (
-    <div className="flex flex-col items-center gap-3 p-5 rounded-2xl hover:shadow-md transition-shadow" style={{ background: "var(--card-bg)", border: "1.5px solid #C4A882" }}>
-      <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
+    <div className="flex flex-col items-center gap-4 p-6 rounded-2xl hover:shadow-md transition-shadow" style={{ background: "var(--card-bg)", border: "1.5px solid #C4A882" }}>
+      <div className="relative w-32 h-32 rounded-full overflow-hidden flex-shrink-0">
         {photoUrl ? (
           <Image
             src={photoUrl}
@@ -60,7 +60,7 @@ export function ParticipantCard({ participant }: { participant: Participant }) {
         )}
       </div>
 
-      <p className="text-sm font-bold text-center tracking-wide uppercase" style={{ color: "var(--navy)" }}>{name}</p>
+      <p className="text-base font-bold text-center tracking-wide uppercase" style={{ color: "var(--navy)" }}>{name}</p>
 
       <div className="flex gap-3">
         {linkedinUrl && (

@@ -47,7 +47,7 @@ export default async function Home() {
             No participants yet — check back soon.
           </p>
         ) : (
-          <div className="w-full max-w-5xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-2">
+          <div className="w-full max-w-4xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 px-2">
             {participants.map((p) => (
               <ParticipantCard key={p.id} participant={p} />
             ))}
