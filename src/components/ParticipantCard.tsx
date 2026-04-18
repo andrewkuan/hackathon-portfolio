@@ -35,7 +35,7 @@ function Initials({ name }: { name: string }) {
     ? `${parts[0][0]}${parts[parts.length - 1][0]}`
     : name.slice(0, 2);
   return (
-    <div className="w-24 h-24 rounded-full bg-gray-200 flex items-center justify-center text-2xl font-semibold text-gray-500 select-none">
+    <div className="w-24 h-24 rounded-full flex items-center justify-center text-2xl font-bold select-none" style={{ background: "var(--tan)", color: "var(--card-bg)" }}>
       {initials.toUpperCase()}
     </div>
   );
@@ -45,7 +45,7 @@ export function ParticipantCard({ participant }: { participant: Participant }) {
   const { name, photoUrl, linkedinUrl, instagramUrl, websiteUrl } = participant;
 
   return (
-    <div className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-white shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+    <div className="flex flex-col items-center gap-3 p-5 rounded-2xl hover:shadow-md transition-shadow" style={{ background: "var(--card-bg)", border: "1.5px solid var(--tan)", borderOpacity: 0.4 }}>
       <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
         {photoUrl ? (
           <Image
@@ -60,7 +60,7 @@ export function ParticipantCard({ participant }: { participant: Participant }) {
         )}
       </div>
 
-      <p className="text-base font-semibold text-gray-800 text-center">{name}</p>
+      <p className="text-sm font-bold text-center tracking-wide uppercase" style={{ color: "var(--navy)" }}>{name}</p>
 
       <div className="flex gap-3">
         {linkedinUrl && (
@@ -68,7 +68,7 @@ export function ParticipantCard({ participant }: { participant: Participant }) {
             href={linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-800 transition-colors"
+            className="transition-colors" style={{ color: "var(--brown)" }}
             aria-label={`${name} on LinkedIn`}
           >
             <LinkedInIcon />
@@ -79,7 +79,7 @@ export function ParticipantCard({ participant }: { participant: Participant }) {
             href={instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-pink-500 hover:text-pink-700 transition-colors"
+            className="transition-colors" style={{ color: "var(--tan)" }}
             aria-label={`${name} on Instagram`}
           >
             <InstagramIcon />
@@ -90,7 +90,7 @@ export function ParticipantCard({ participant }: { participant: Participant }) {
             href={websiteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-500 hover:text-gray-800 transition-colors"
+            className="transition-colors" style={{ color: "var(--navy)" }}
             aria-label={`${name}'s project website`}
           >
             <GlobeIcon />
