@@ -15,9 +15,7 @@ export interface Participant {
 const KV_KEY = "participants";
 
 function isKvEnabled(): boolean {
-  return Boolean(
-    process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
-  );
+  return Boolean(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
 }
 
 // ── Upstash Redis path ───────────────────────────────────────────────────────
@@ -25,8 +23,8 @@ function isKvEnabled(): boolean {
 async function kvRead(): Promise<Participant[]> {
   const { Redis } = await import("@upstash/redis");
   const redis = new Redis({
-    url: process.env.UPSTASH_REDIS_REST_URL!,
-    token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+    url: process.env.KV_REST_API_URL!,
+    token: process.env.KV_REST_API_TOKEN!,
   });
   const data = await redis.get<Participant[]>(KV_KEY);
   return data ?? [];
@@ -35,8 +33,8 @@ async function kvRead(): Promise<Participant[]> {
 async function kvWrite(data: Participant[]): Promise<void> {
   const { Redis } = await import("@upstash/redis");
   const redis = new Redis({
-    url: process.env.UPSTASH_REDIS_REST_URL!,
-    token: process.env.UPSTASH_REDIS_REST_TOKEN!,
+    url: process.env.KV_REST_API_URL!,
+    token: process.env.KV_REST_API_TOKEN!,
   });
   await redis.set(KV_KEY, data);
 }
