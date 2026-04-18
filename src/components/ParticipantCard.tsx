@@ -45,7 +45,7 @@ export function ParticipantCard({ participant }: { participant: Participant }) {
   const { name, photoUrl, linkedinUrl, instagramUrl, websiteUrl } = participant;
 
   return (
-    <div className="flex flex-col items-center gap-3 p-5 rounded-2xl hover:shadow-md transition-shadow" style={{ background: "var(--card-bg)", border: "1.5px solid var(--tan)", borderOpacity: 0.4 }}>
+    <div className="flex flex-col items-center gap-3 p-5 rounded-2xl hover:shadow-md transition-shadow" style={{ background: "var(--card-bg)", border: "1.5px solid #C4A882" }}>
       <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0">
         {photoUrl ? (
           <Image
