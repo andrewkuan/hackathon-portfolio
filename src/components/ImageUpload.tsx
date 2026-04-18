@@ -23,8 +23,12 @@ export function ImageUpload({ currentUrl, onUploaded }: Props) {
 
     try {
       const res = await fetch("/api/upload", { method: "POST", body: form });
+      if (!res.ok) {
+        let msg = "Upload failed";
+        try { msg = (await res.json()).error ?? msg; } catch {}
+        throw new Error(msg);
+      }
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error ?? "Upload failed");
       setPreview(data.url);
       onUploaded(data.url);
     } catch (e) {

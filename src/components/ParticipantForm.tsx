@@ -35,7 +35,8 @@ export function ParticipantForm({ initial = {}, mode }: Props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ linkedinUrl }),
       });
-      const data = await res.json();
+      let data = { scraped: false, imageUrl: null };
+      try { data = await res.json(); } catch {}
       if (data.scraped && data.imageUrl) {
         setPhotoUrl(data.imageUrl);
         setPhotoSource("linkedin");
@@ -66,8 +67,9 @@ export function ParticipantForm({ initial = {}, mode }: Props) {
         body: JSON.stringify(body),
       });
       if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error ?? "Save failed");
+        let msg = "Save failed";
+        try { msg = (await res.json()).error ?? msg; } catch {}
+        throw new Error(msg);
       }
       router.push("/admin/participants");
       router.refresh();
